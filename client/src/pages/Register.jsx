@@ -20,7 +20,7 @@ const handleSubmit = async (e) => {
     e.preventDefault();
   
     try {
-   const res=   await axios.post("https://task-manager-app-j9mh.onrender.com/api/tasks/api/auth/register", formData);
+   const res=   await axios.post("https://task-manager-app-j9mh.onrender.com/api/auth/register", formData);
       toast.success("Registration successful!  Redirecting to login...");
         console.log("Server response:", res.data);
         setTimeout(() => {
