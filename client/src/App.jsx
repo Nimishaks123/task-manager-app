@@ -24,7 +24,7 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/new-task" element={<ProtectedRoute><NewTask /></ProtectedRoute>} />
           <Route path="/todo" element={<ProtectedRoute><TodoList /></ProtectedRoute>} />
-          <Route path="*" element={<Navigate to="/login" />} />
+          <Route path="*" element={<Navigate to="/register" />} />
           {/* <ToastContainer /> */}
   
         </Routes>
