@@ -17,16 +17,11 @@ const Login = () => {
       }));
     };
   
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     console.log("Form Submitted:", formData);
-//     // Send to backend using fetch/axios here
-//   };
 const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5001/api/auth/login", formData);
+      const res = await axios.post("https://task-manager-app-j9mh.onrender.com/api/auth/login", formData);
       console.log("Server response:", res.data);
 
       // ✅ Combine user and token
@@ -121,22 +116,6 @@ const handleSubmit = async (e) => {
     <path fill="#1565c0" d="M43.611,20.083L43.595,20L42,20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571	c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
   </svg>
 </div>
-
-
-
-{/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
-  <defs>
-    <linearGradient id="facebookGradient" x1="9.993" x2="40.615" y1="9.993" y2="40.615" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stopColor="#2aa4f4" />
-      <stop offset="1" stopColor="#007ad9" />
-    </linearGradient>
-  </defs>
-  <path fill="url(#facebookGradient)" d="M24,4C12.954,4,4,12.954,4,24s8.954,20,20,20s20-8.954,20-20S35.046,4,24,4z" />
-  <path fill="#fff" d="M26.707,29.301h5.176l0.813-5.258h-5.989v-2.874c0-2.184,0.714-4.121,2.757-4.121h3.283V12.46 
-    c-0.577-0.078-1.797-0.248-4.102-0.248c-4.814,0-7.636,2.542-7.636,8.334v3.498H16.06v5.258h4.948v14.452 
-    C21.988,43.9,22.981,44,24,44c0.921,0,1.82-0.084,2.707-0.204V29.301z"/>
-</svg> */}
-
 {/* <FaGithub className="text-2xl text-gray-600 cursor-pointer" /> */}
 <FaApple className="text-2xl text-gray-600 cursor-pointer" />
         </div>

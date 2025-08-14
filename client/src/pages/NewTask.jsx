@@ -115,7 +115,7 @@ const ListifyDashboard = () => {
       const headers = getAuthHeaders();
       if (!headers) return;
 
-      const response = await fetch(`http://localhost:5001/api/tasks/date-type/${dateType}`, {
+      const response = await fetch(`https://task-manager-app-j9mh.onrender.com/api/tasks/date-type/${dateType}`, {
         headers
       });
 
@@ -139,7 +139,7 @@ const ListifyDashboard = () => {
       if (!headers) return;
 
       const formattedDate = date.toISOString().split('T')[0];
-      const response = await fetch(`http://localhost:5001/api/tasks/date/${formattedDate}`, {
+      const response = await fetch(`https://task-manager-app-j9mh.onrender.com/api/tasks/date/${formattedDate}`, {
         headers
       });
 
@@ -162,9 +162,9 @@ const ListifyDashboard = () => {
       if (!headers) return;
 
       const [todayRes, tomorrowRes, overdueRes] = await Promise.all([
-        fetch(`http://localhost:5001/api/tasks/date-type/today`, { headers }),
-        fetch(`http://localhost:5001/api/tasks/date-type/tomorrow`, { headers }),
-        fetch(`http://localhost:5001/api/tasks/date-type/overdue`, { headers })
+        fetch(`https://task-manager-app-j9mh.onrender.com/api/tasks/date-type/today`, { headers }),
+        fetch(`https://task-manager-app-j9mh.onrender.com/api/tasks/date-type/tomorrow`, { headers }),
+        fetch(`https://task-manager-app-j9mh.onrender.com/api/tasks/date-type/overdue`, { headers })
       ]);
 
       const [todayData, tomorrowData, overdueData] = await Promise.all([
@@ -249,7 +249,7 @@ const ListifyDashboard = () => {
       if (dueDate) taskData.dueDate = dueDate;
       if (scheduledDate) taskData.scheduledDate = scheduledDate;
 
-      const response = await fetch("http://localhost:5001/api/tasks", {
+      const response = await fetch("https://task-manager-app-j9mh.onrender.com/api/tasks/", {
         method: "POST",
         headers,
         body: JSON.stringify(taskData),
@@ -295,7 +295,7 @@ const ListifyDashboard = () => {
       const headers = getAuthHeaders();
       if (!headers) return;
 
-      const response = await fetch(`http://localhost:5001/api/tasks/${taskId}`, {
+      const response = await fetch(`https://task-manager-app-j9mh.onrender.com/api/tasks/${taskId}`, {
         method: 'PATCH',
         headers,
         body: JSON.stringify({ status: newStatus })

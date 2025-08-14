@@ -1,34 +1,3 @@
-//  import { useEffect, useState } from "react";
-//  import { getTasks, deleteTask } from "../api/tasks";
-// import { useAuth } from "../context/AuthContext";
-
-// export default function TodoList() {
-//    const { user } = useAuth();
-//       const [tasks, setTasks] = useState([]);
-
-//   const fetchTasks = async () => {
-//     const { data } = await getTasks(user.token);
-//     setTasks(data);
-//   };
-
-//    const handleDelete = async (id) => {
-//     await deleteTask(id, user.token);
-//      fetchTasks();
-//    };
-
-//    useEffect(() => { fetchTasks(); }, []);
-
-//   return (
-//     <ul>
-//        {tasks.map((task) => (
-//         <li key={task._id}>
-//            {task.title}
-//           <button onClick={() => handleDelete(task._id)}>Delete</button>
-//          </li>
-//        ))}
-//      </ul>
-//   );
-//  }
 import React, { useState, useEffect } from 'react';
 
 const TaskListDashboard = () => {
@@ -36,7 +5,6 @@ const TaskListDashboard = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Sample tasks for demo (replace with API call)
   const sampleTasks = [
     {
       _id: '1',

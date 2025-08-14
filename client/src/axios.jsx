@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5001/api/tasks", // change this to your actual backend URL
+  baseURL: "https://task-manager-app-j9mh.onrender.com/",
   headers: {
     "Content-Type": "application/json",
   },

@@ -16,22 +16,15 @@ const Register = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     console.log("Form Submitted:", formData);
-//     // Send to backend using fetch/axios here
-//   };
 const handleSubmit = async (e) => {
     e.preventDefault();
   
     try {
-      //const res = await axios.post("/api/auth/register", formData); // 🔥 Correct endpoint
-   
-        const res=   await axios.post("http://localhost:5001/api/auth/register", formData);
+   const res=   await axios.post("https://task-manager-app-j9mh.onrender.com/api/tasks/api/auth/register", formData);
       toast.success("Registration successful!  Redirecting to login...");
         console.log("Server response:", res.data);
         setTimeout(() => {
-            navigate("/login"); // ✅ Navigate after short delay
+            navigate("/login"); // Navigate after short delay
           }, 1500); // Optional: Delay to let toast appear
     } catch (error) {
       console.error("Registration error:", error);
