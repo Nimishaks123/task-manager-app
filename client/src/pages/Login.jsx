@@ -37,9 +37,9 @@ const handleSubmit = async (e) => {
       toast.success("Login successful!");
 
       // ✅ Navigate to task page after short delay
-      setTimeout(() => {
+      // setTimeout(() => {
         navigate("/new-task");
-      }, 1500);
+      // }, 1500);
     } catch (error) {
       console.error("Login error:", error);
       toast.error(

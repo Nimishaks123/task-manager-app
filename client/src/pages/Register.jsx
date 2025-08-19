@@ -23,9 +23,9 @@ const handleSubmit = async (e) => {
    const res=   await axios.post("https://task-manager-app-j9mh.onrender.com/api/auth/register", formData);
       toast.success("Registration successful!  Redirecting to login...");
         console.log("Server response:", res.data);
-        setTimeout(() => {
+        // setTimeout(() => {
             navigate("/login"); // Navigate after short delay
-          }, 1500); // Optional: Delay to let toast appear
+          // }, 500); // Optional: Delay to let toast appear
     } catch (error) {
       console.error("Registration error:", error);
       toast.error(
